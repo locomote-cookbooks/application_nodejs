@@ -22,10 +22,6 @@ include Chef::Mixin::LanguageIncludeRecipe
 
 action :before_compile do
 
-  if new_resource.npm
-    include_recipe 'nodejs::npm'
-  end
-
   unless new_resource.restart_command
     new_resource.restart_command do
 
